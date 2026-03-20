@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default function() {
   return defineConfig({
-    base: '/orangeperf/',
+    base: '/orangeperf-pc/',
     plugins: [
       react(),
                       VitePWA({
