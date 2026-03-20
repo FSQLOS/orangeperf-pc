@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/orangeperf-pc/sw.js', { scope: '/orangeperf-pc/' })})}
