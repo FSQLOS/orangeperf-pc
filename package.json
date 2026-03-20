@@ -1,9 +1,9 @@
 {
-  "name": "orange-perf",
+  "name": "orangeperf-pc",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://FSQLOS.github.io/orangeperf",
+  "homepage": "https://FSQLOS.github.io/orangeperf-pc",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,6 +16,7 @@
     "canvas-confetti": "^1.9.4",
     "chart.js": "^4.5.1",
     "chartjs-plugin-datalabels": "^2.2.0",
+    "lucide-react": "^0.383.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
