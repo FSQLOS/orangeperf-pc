@@ -80,7 +80,7 @@ export default function MobileDashboardDesktop({ config: initialConfig }) {
         if (l.includes("ALCATEL")) return "ACC_HOME";
         if (l.includes("COQUE")||l.includes("ETUI")||l.includes("FOLIO")||l.includes("DBRAMENTE")||l.includes("DBRAMANTE")||l.includes("VERRE")||l.includes("FILM")||l.includes("PROT")||l.includes("CAMERA LENS")||l.includes("FORCE GLASS")||l.includes("VT")||l.includes("QDOS")||l.includes("FORCE CASE")||l.includes("AOD PROTECTION")) return "PROT";
         if (l.startsWith("CS ")||l.includes("CHARGEUR")||l.includes("CABLE")||l.includes("KIT PIETON")||l.includes("POWERBANK")||l.includes("AUDIO")||l.includes("ENCEINTE")||l.includes("AIRPODS")||l.includes("BANDOULIERE")||l.includes("BUDS")||l.includes("CASQUE")||l.includes("FREEBUDS")||l.includes("TW")||l.includes("MONTRE")||l.includes("WATCH")||l.includes("BAND")||l.includes("GALAXY FIT")||l.includes("SUPPORT")||l.includes("SPRAY")||l.includes("RECHARGE FORCE")||l.includes("RECHARGE SPRAY")||l.includes("BASE SECTEUR")||l.includes("PAD INDUCTION")||l.includes("SMARTTAG")||l.includes("TRACKER")||l.includes("TAG")||l.includes("M/L")) return "ACC";
-        if (l.includes("ASSURANCE")||CODES.Assurance.includes(code)) return "SERV";
+        if ((l.includes("ASSURANCE") && !l.includes("SANS ASSURANCE")) || CODES.Assurance.includes(code)) return "SERV";
         if (l.includes("CYBER")||CODES.Cyber.includes(code)||CODES.MP.includes(code)) return "HOME";
         if (l.includes("FLASH")||l.includes("EXPERTE")||l.includes("ATELIER")) return "TRANSFERTS";
         if (CODES.Broadband.includes(code)) return "BOX";
