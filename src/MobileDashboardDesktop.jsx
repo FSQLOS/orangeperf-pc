@@ -147,8 +147,9 @@ export default function MobileDashboardDesktop({ config: initialConfig }) {
                 const isLabelBlacklisted=BLACKLIST_CA.some(w=>lib.includes(w));
                 const isPriceExcluded=EXCLUDED_PRICES.includes(absVal);
                 let fam=getFamily(lib,codeArt);
-                let isTerm=!isPret&&fam!=="PROT"&&fam!=="ACC"&&fam!=="ACC_HOME"&&(KEY_STOCKAGE.some(k=>lib.includes(k))||KEY_MODELE.some(k=>lib.includes(k)))&&!KEY_NOT_TERM.some(k=>lib.includes(k))&&!isWatch&&!lib.includes("ALCATEL")&&absVal>5&&!isPret;
-                let isReco=isTerm&&(lib.includes("RECONDITIONNE")||lib.includes("OFFRE 2ND")||lib.includes("RENEWD")||lib.includes("RECOMMERCE")||lib.includes("REC GR")||lib.includes("C REC")||lib.includes("R REC")||lib.includes("L REC")||lib.includes("EF REC")||lib.includes("P REC"));
+                const isRecoKeyword = lib.includes("RECONDITIONNE")||lib.includes("OFFRE 2ND")||lib.includes("RENEWD")||lib.includes("RECOMMERCE")||lib.includes("REC GR")||lib.includes("C REC")||lib.includes("R REC")||lib.includes("L REC")||lib.includes("EF REC")||lib.includes("P REC");
+                let isTerm = !isPret && fam!=="PROT" && fam!=="ACC" && fam!=="ACC_HOME" && (KEY_STOCKAGE.some(k=>lib.includes(k)) || KEY_MODELE.some(k=>lib.includes(k)) || isRecoKeyword) && !KEY_NOT_TERM.some(k=>lib.includes(k)) && !isWatch && !lib.includes("ALCATEL") && absVal>=5;
+                let isReco = isTerm && isRecoKeyword;
                 let ht=0;
                 if(!isRefund){
                     if(isWatch){ht=caVal/1.2;}
